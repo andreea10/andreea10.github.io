@@ -47,7 +47,7 @@ class t_eq2_model {
 		
 		get_solutions()
 		{
-			var solutions = [] ;
+			var solutions = {} ;
 			solutions.x1_re=this.x1_re;
 			solutions.x1_im=this.x1_im;
 			solutions.x2_re=this.x2_re;
