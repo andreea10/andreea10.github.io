@@ -43,7 +43,7 @@ class t_eq2_model {
    }
  }
 
-		}
+		
 		
 		get_solutions()
 		{
