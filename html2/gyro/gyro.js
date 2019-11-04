@@ -9,7 +9,7 @@ function desenare(unghi_x, unghi_y)
 	var canvas=document.getElementById("id_canvas");
 	
 	//obtinem referinta la context 
-	var canvas=canvas.getContext("2D");
+	var context=canvas.getContext("2D");
 	
 	//stergem canvasul
 	context.clearRect(0,0,canvas.width, canvas.height);
