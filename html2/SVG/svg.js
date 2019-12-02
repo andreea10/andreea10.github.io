@@ -1,5 +1,28 @@
 document.getElementById("id_logic_version").innerHTML = "Logic Version = 2019.12.02.4";
+document.getElementById("id_cerere", request_clicked);
 
+function ok_f(p)
+
+{
+if(p=="granted")
+	window.addEventListener("deviceorientation",on_gyro_data_uab);
+	else
+		alert("Nu am primit aprobare");
+}
+				
+				
+function not_ok_f(p)
+	{
+		alert(p);
+
+if(typeof(DeviceOrientationEvent.requestPermission)== "function")
+	else
+		window.addEventListener("deviceorientation",on_gyro_data_uab);
+
+function request_clicked()
+{
+	DeviceOrientationEvent.requestPermission().then(ok_f).catch(not_ok_f);
+}
 window.addEventListener("deviceorientation", on_gyro_data_uab);
 window.addEventListener("devicemotion", on_acc_data_uab);
 
