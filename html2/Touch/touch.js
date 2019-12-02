@@ -3,7 +3,7 @@ document.getElementById("id_logic").innerHTML = "Logic: 2019.12.02.0";
 window.addEventListener("touchstart", touch_start_uab);
 
  var canvas = document.getElementById("id_canvas");
- var context = canvas.getElementById("2d");
+ var context = canvas.getContext("2d");
 
 function touch_start_uab(p)
 {
