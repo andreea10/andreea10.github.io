@@ -7,6 +7,9 @@ window.addEventListener("touchend", touch_end_uab);
  var canvas = document.getElementById("id_canvas");
  var context = canvas.getContext("2d");
  
+ var canvas_rect=canvas.getBoundingClientRect();
+ 
+ 
  var last_position = [];
  
  function get_random_color()
@@ -30,7 +33,7 @@ function touch_start_uab(p)
 		
 		
 		context.beginPath();
-		context.arc(t[i].pageX,t[i].pageY,10,0,2 * Math.PI);
+		context.arc(t[i].pageX-canvas_rect.left,t[i].pageY-canvas_rect.top,10,0,2 * Math.PI);
 		context.strokeStyle=touch_info.color;
 		context.fillStyle = touch_info.color;
 		context.lineWidth=1;
@@ -53,13 +56,16 @@ function touch_move_uab(p)
 			break;
 		}
 		context.beginPath();
-		context.moveTo(last_position[index_t].x,last_position[index_t].y);
-		context.lineTo(t[i].pageX,t[i].pageY);
+		context.moveTo(last_position[index_t].x-canvas_rect.left,last_position[index_t].y-canvas_rect.top);
+		context.lineTo(t[i].pageX-canvas_rect.left,t[i].pageY-canvas_rect.top);
 		context.strokeStyle=last_position[index_t].color;
 		context.fillStyle=last_position[index_t].color;
 		context.lineWidth = 20 ;
 		context.fill();
 		context.stroke();
+		
+		last_position[index_t].x=t[i].pageX;
+		last_position[index_t].y=t[i].pageY;
 	}
 }
 
