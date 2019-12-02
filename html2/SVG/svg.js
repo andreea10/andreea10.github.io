@@ -10,7 +10,7 @@ function desenare(beta, gamma)
 	
 	
 	
-	context.beginPath();
+	
 	var x = svg.width / 2 + beta / 90 * svg.width / 2 ;
 	var y = svg.height / 2 + gamma / 90 * svg.height / 2 ;
 	
