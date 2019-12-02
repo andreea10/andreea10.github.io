@@ -1,7 +1,7 @@
 document.getElementById("id_logic_version").innerHTML = "Logic Version = 2019.12.02.3";
 
 window.addEventListener("deviceorientation", on_gyro_data_uab);
-window.addEventListener("devicemotion", on_motion_uab);
+window.addEventListener("devicemotion", on_acc_data_uab);
 
 function desenare(unghi_x, unghi_y)
 {
@@ -25,12 +25,12 @@ function on_gyro_data_uab(e)
 	desenare(e.gamma, e.beta);
 }
 
-function on_motion_uab(e)
+function on_acc_data_uab(e)
 {
 	var acc = e.accelerationIncludingGravity;
 	
 	
-	var rot_x = -Math.atan(acc.y / acc.z) / Math.PI * 180;
-	var rot_y = Math.atan(acc.x / acc.z) / Math.PI * 180;
+	var rot_x = Math.atan(acc.x / acc.z) *180/ Math.PI ;
+	var rot_y = Math.atan(acc.y / acc.z) *180/ Math.PI ;
 	
 }
