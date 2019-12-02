@@ -1,6 +1,6 @@
-document.getElementById("id_logic_version").innerHTML = "Logic Version = 2019.10.25.3";
+document.getElementById("id_logic_version").innerHTML = "Logic Version = 2019.12.02.3";
 
-//window.addEventListener("deviceorientation", on_orientation_uab);
+window.addEventListener("deviceorientation", on_gyro_data_uab);
 window.addEventListener("devicemotion", on_motion_uab);
 
 function desenare(unghi_x, unghi_y)
@@ -18,12 +18,12 @@ function desenare(unghi_x, unghi_y)
 	circle.setAttribute("cy", y);
 }
 
-//function on_orientation_uab(e)
-//{
+function on_gyro_data_uab(e)
+{
 	
 	
-	//desenare(e.beta, e.gamma);
-//}
+	desenare(e.gamma, e.beta);
+}
 
 function on_motion_uab(e)
 {
