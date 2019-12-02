@@ -1,4 +1,4 @@
-document.getElementById("id_logic_version").innerHTML = "Logic Version = 2019.12.02.3";
+document.getElementById("id_logic_version").innerHTML = "Logic Version = 2019.12.02.4";
 
 window.addEventListener("deviceorientation", on_gyro_data_uab);
 window.addEventListener("devicemotion", on_acc_data_uab);
